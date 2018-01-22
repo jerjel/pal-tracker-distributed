@@ -4,5 +4,4 @@ applications:
   host: registration-pal-jer
   memory: 1G
   instances: 1
-  services:
-  - tracker-registration-database
+
