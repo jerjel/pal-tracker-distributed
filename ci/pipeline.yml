@@ -93,7 +93,7 @@ jobs:
     trigger: false
     passed: [build]
   - task: migrate database
-    file: pal-tracker-distributed/ci/databaseMigrate.yml
+    file: pal-tracker/ci/databaseMigrate.yml
     params:
       CF_API_URL: {{cf-api-url}}
       CF_USERNAME: {{cf-username}}
@@ -120,7 +120,7 @@ jobs:
     trigger: false
     passed: [build]
   - task: migrate database
-    file: pal-tracker-distributed/ci/databaseMigrate.yml
+    file: pal-tracker/ci/databaseMigrate.yml
     params:
       CF_API_URL: {{cf-api-url}}
       CF_USERNAME: {{cf-username}}
@@ -147,7 +147,7 @@ jobs:
     trigger: false
     passed: [build]
   - task: migrate database
-    file: pal-tracker-distributed/ci/databaseMigrate.yml
+    file: pal-tracker/ci/databaseMigrate.yml
     params:
       CF_API_URL: {{cf-api-url}}
       CF_USERNAME: {{cf-username}}
@@ -174,7 +174,7 @@ jobs:
     trigger: false
     passed: [build]
   - task: migrate database
-    file: pal-tracker-distributed/ci/databaseMigrate.yml
+    file: pal-tracker/ci/databaseMigrate.yml
     params:
       CF_API_URL: {{cf-api-url}}
       CF_USERNAME: {{cf-username}}
