@@ -6,5 +6,3 @@ applications:
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: http://registration-pal-jer.apps.pikes.pal.pivotal.io/
-  services:
-  - tracker-timesheets-database
