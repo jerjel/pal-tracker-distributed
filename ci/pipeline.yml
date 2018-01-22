@@ -91,6 +91,7 @@ jobs:
     trigger: true
   - get: allocations-artifacts
     trigger: false
+    passed: [build]
   - task: migrate database
     file: pal-tracker-distributed/ci/databaseMigrate.yml
     params:
@@ -117,6 +118,7 @@ jobs:
     trigger: true
   - get: backlog-artifacts
     trigger: false
+    passed: [build]
   - task: migrate database
     file: pal-tracker-distributed/ci/databaseMigrate.yml
     params:
@@ -143,6 +145,7 @@ jobs:
     trigger: true
   - get: registration-artifacts
     trigger: false
+    passed: [build]
   - task: migrate database
     file: pal-tracker-distributed/ci/databaseMigrate.yml
     params:
@@ -169,6 +172,7 @@ jobs:
     trigger: true
   - get: timesheets-artifacts
     trigger: false
+    passed: [build]
   - task: migrate database
     file: pal-tracker-distributed/ci/databaseMigrate.yml
     params:
