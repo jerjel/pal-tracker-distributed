@@ -92,19 +92,6 @@ jobs:
   - get: allocations-artifacts
     trigger: false
     passed: [build]
-  - task: migrate database
-    file: pal-tracker/ci/databaseMigrate.yml
-    params:
-      CF_API_URL: {{cf-api-url}}
-      CF_USERNAME: {{cf-username}}
-      CF_PASSWORD: {{cf-password}}
-      CF_ORG: {{cf-org}}
-      CF_SPACE: sandbox
-      MYSQL_IP: {{mysql-ip}}
-      APP_NAME_DATABASE: allocations-database
-      DATABASE_NAME: {{allocations-database-name}}
-      DATABASE_USERNAME: {{allocations-database-username}}
-      DATABASE_PASSWORD: {{allocations-database-password}}
   - put: cf
     params:
       manifest: pal-tracker/manifest-allocations.yml
@@ -119,19 +106,6 @@ jobs:
   - get: backlog-artifacts
     trigger: false
     passed: [build]
-  - task: migrate database
-    file: pal-tracker/ci/databaseMigrate.yml
-    params:
-      CF_API_URL: {{cf-api-url}}
-      CF_USERNAME: {{cf-username}}
-      CF_PASSWORD: {{cf-password}}
-      CF_ORG: {{cf-org}}
-      CF_SPACE: sandbox
-      MYSQL_IP: {{mysql-ip}}
-      APP_NAME_DATABASE: backlog-database
-      DATABASE_NAME: {{backlog-database-name}}
-      DATABASE_USERNAME: {{backlog-database-username}}
-      DATABASE_PASSWORD: {{backlog-database-password}}
   - put: cf
     params:
       manifest: pal-tracker/manifest-backlog.yml
@@ -146,19 +120,6 @@ jobs:
   - get: registration-artifacts
     trigger: false
     passed: [build]
-  - task: migrate database
-    file: pal-tracker/ci/databaseMigrate.yml
-    params:
-      CF_API_URL: {{cf-api-url}}
-      CF_USERNAME: {{cf-username}}
-      CF_PASSWORD: {{cf-password}}
-      CF_ORG: {{cf-org}}
-      CF_SPACE: sandbox
-      MYSQL_IP: {{mysql-ip}}
-      APP_NAME_DATABASE: registration-database
-      DATABASE_NAME: {{registration-database-name}}
-      DATABASE_USERNAME: {{registration-database-username}}
-      DATABASE_PASSWORD: {{registration-database-password}}
   - put: cf
     params:
       manifest: pal-tracker/manifest-registration.yml
@@ -173,19 +134,6 @@ jobs:
   - get: timesheets-artifacts
     trigger: false
     passed: [build]
-  - task: migrate database
-    file: pal-tracker/ci/databaseMigrate.yml
-    params:
-      CF_API_URL: {{cf-api-url}}
-      CF_USERNAME: {{cf-username}}
-      CF_PASSWORD: {{cf-password}}
-      CF_ORG: {{cf-org}}
-      CF_SPACE: sandbox
-      MYSQL_IP: {{mysql-ip}}
-      APP_NAME_DATABASE: timesheets-database
-      DATABASE_NAME: {{timesheets-database-name}}
-      DATABASE_USERNAME: {{timesheets-database-username}}
-      DATABASE_PASSWORD: {{timesheets-database-password}}
   - put: cf
     params:
       manifest: pal-tracker/manifest-timesheets.yml
